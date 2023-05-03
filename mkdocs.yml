@@ -3,6 +3,8 @@ nav:
     - main:
         - main/index.md
         - main/graduate.md
+        - main/to be excellent.md
+        - main/ideas.md
 extra_css:
     - res/extra.css
 extra_javascript:
@@ -110,8 +112,8 @@ theme:
 
 extra:
     alternate:
-        - name: English
-          link: /en/ 
+        - name: chatgpt镜像站
+          link: https://chat.0x7f.cn/
           lang: en
         - name: 中文
           link: /zh/
