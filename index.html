@@ -34,6 +34,9 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
+<a class="md-skip" href="#_1">
+          跳转至
+        </a>
 </div>
 <div data-md-component="announce">
 </div>
@@ -139,6 +142,16 @@
         main
       </a>
 </li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="dosome/">
+        dosome
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="chat/">
+        chat
+      </a>
+</li>
 </ul>
 </div>
 </nav>
@@ -186,6 +199,92 @@
         Ideas
       </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="main/%E8%81%8C%E4%B8%9A%E5%88%86%E6%9E%90/">
+        职业分析
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="dosome/">dosome</a>
+<label for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+          dosome
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="dosome/ruby-gosu/">
+        Ruby gosu
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="dosome/ruby-gtk3/">
+        Ruby gtk3
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="dosome/ruby%20on%20rails/">
+        Ruby on rails
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="dosome/js-vue/">
+        Js vue
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="dosome/ruby-nokogiri/">
+        Ruby nokogiri
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="dosome/cpp-qt/">
+        Cpp qt
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="dosome/python/">
+        Python
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="dosome/cpp-frame/">
+        Cpp frame
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="dosome/cpp-juce/">
+        Cpp juce
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="dosome/cpp-easyX/">
+        cpp easyX
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="chat/">chat</a>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+          chat
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
 </ul>
 </nav>
 </li>
@@ -198,6 +297,26 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="目录" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_1">
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#htd">
+    HTD
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_2">
+    理论实践论
+  </a>
+</li>
+</ul>
 </nav>
 </div>
 </div>
@@ -205,6 +324,102 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1>Home</h1>
+<h3 id="_1"></h3>
+<h3 id="htd">HTD</h3>
+<p>以下是个人对学习理论的构想：</p>
+<pre class="mermaid"><code>graph
+1[理论] --&gt;|优化| 2[实践]
+2 --&gt;|教条化| 1
+subgraph " "
+    a[实践] --&gt; b[程序]
+    a --&gt; c[算法]
+end
+subgraph " "
+    3[理论] --&gt; 4[理论实践论]
+end</code></pre>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<ul>
+<li>如何将 理论/实践 划分子集？</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">keys</p>
+<ul>
+<li>心流，费曼，海马体，莫扎特效应</li>
+</ul>
+</div>
+<h3 id="_2">理论实践论</h3>
+<p>理论实践论的基本思想是<strong>收集能够解决实际问题的子问题的过程（称为 算法），以及将这些过程有效组合的方法（称为 程序）</strong></p>
+<p>理论实践论是需要不断扩充和优化<strong>算法集合</strong>（但算法数量不宜过多），并将算法组合在一起的方法论；是让人们思考“做什么”的理论</p>
+<div class="admonition note">
+<p class="admonition-title">算法模块的概念</p>
+<ul>
+<li>全局性异步算法：每种程序的公共部分，即每种程序都必须执行的异步算法，如：心流<ul>
+<li>全局性异步算法是 算法集 和 程序集 的交集部分</li>
+</ul>
+</li>
+</ul>
+</div>
+<p>如下我们将围绕 “如何提高学习效率” 进行分析</p>
+<div class="admonition note">
+<p class="admonition-title"><span class="arithmatex">\(A_0\)</span> 全局异步算法</p>
+<ol>
+<li>扩充当前问题/命题的其他算法</li>
+</ol>
+</div>
+<div class="admonition note">
+<p class="admonition-title"><span class="arithmatex">\(A_1\)</span> 睡前回忆法则</p>
+<ol>
+<li>每天把不会的东西乱序写在纸上，晚上回忆（30min 起步）；如果想不起来 或 无法解决，那么带着问题睡觉<ol>
+<li>引理1：睡眠的首要功能是<strong>加强记忆</strong></li>
+</ol>
+</li>
+<li>每个月遍历一遍当月的记录<ol>
+<li>引理2：每个知识点间隔性重复 6 次，基本不会遗忘</li>
+</ol>
+</li>
+<li>攻克难点 &amp;弱点</li>
+</ol>
+</div>
+<div class="admonition note">
+<p class="admonition-title"><span class="arithmatex">\(A_2\)</span> 心流</p>
+<ol>
+<li>明确学习目标，分解目标</li>
+<li>保持安静的空间</li>
+<li>开始之前清空大脑</li>
+</ol>
+</div>
+<div class="admonition note">
+<p class="admonition-title"><span class="arithmatex">\(A_3\)</span> 听歌法则</p>
+<ol>
+<li>环境嘈杂 =&gt; 听歌学习<ol>
+<li>引理3：一些音乐具有可控性，能建立学习和环境之间的思维屏障</li>
+</ol>
+</li>
+<li>重复性工作 =&gt; 听喜欢的歌单</li>
+<li>创造性工作 =&gt; 随机歌单</li>
+<li>理科类工作 =&gt; 钢琴音，白噪声</li>
+<li>语言类工作 =&gt; 无音</li>
+</ol>
+</div>
+<div class="admonition note">
+<p class="admonition-title"><span class="arithmatex">\(A_4\)</span> 费马方法</p>
+<ol>
+<li>建立学习目标，以自己的语言组织知识</li>
+<li>教授知识（如：将自己当老师，面对一群学生；或 写博客让人看懂）<ol>
+<li>引理4（费曼金字塔/费曼不等式）：对学习行为按照效率权重排序，有：<span class="arithmatex">\(听讲(5\%) \le 阅读(10\%) \le 讨论 \le 笔记 \le 实践 \le 教授(90\%)\)</span></li>
+<li>引理5（教学的定义）：主动输入知识，处理知识，最后<strong>主动输出知识</strong></li>
+</ol>
+</li>
+<li>教授知识的细节：<ol>
+<li>使用通俗语言描述；即，不使用定理/定律解释事物，而是使用公理来解释</li>
+<li>类比描述</li>
+<li>回顾：教授过程中遇到的认知障碍，则回到知识本身去回顾复习</li>
+</ol>
+</li>
+</ol>
+</div>
 </article>
 </div>
 </div>
