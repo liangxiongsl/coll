@@ -1,0 +1,1549 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="zh">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="../ruby-gtk3/" rel="prev"/>
+<link href="../js-vue/" rel="next"/>
+<link href="https://ts3.cn.mm.bing.net/th?id=ODLS.40c32730-d68b-4b41-80c6-917acd50d82b&amp;w=16&amp;h=16&amp;o=6&amp;pid=1.2" rel="icon"/>
+<meta content="mkdocs-1.4.2, mkdocs-material-9.1.6" name="generator"/>
+<title>Ruby on rails - coll</title>
+<link href="../../assets/stylesheets/main.ded33207.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.a0c5b2b5.min.css" rel="stylesheet"/>
+<style>:root{--md-admonition-icon--note:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M64 32C28.7 32 0 60.7 0 96v320c0 35.3 28.7 64 64 64h224V368c0-26.5 21.5-48 48-48h112V96c0-35.3-28.7-64-64-64H64zm384 320H336c-8.8 0-16 7.2-16 16v112l32-32 64-64 32-32z"/></svg>');--md-admonition-icon--abstract:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M96 0C43 0 0 43 0 96v320c0 53 43 96 96 96h320c17.7 0 32-14.3 32-32s-14.3-32-32-32v-64c17.7 0 32-14.3 32-32V32c0-17.7-14.3-32-32-32H96zm0 384h256v64H96c-17.7 0-32-14.3-32-32s14.3-32 32-32zm32-240c0-8.8 7.2-16 16-16h192c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16zm16 48h192c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16s7.2-16 16-16z"/></svg>');--md-admonition-icon--info:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M256 512a256 256 0 1 0 0-512 256 256 0 1 0 0 512zm-40-176h24v-64h-24c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24h-80c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"/></svg>');--md-admonition-icon--tip:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M480 32c0-12.9-7.8-24.6-19.8-29.6S434.5.2 425.3 9.3L381.7 53c-48 48-113.1 75-181 75H64c-35.3 0-64 28.7-64 64v96c0 35.3 28.7 64 64 64v128c0 17.7 14.3 32 32 32h64c17.7 0 32-14.3 32-32V352h8.7c67.9 0 133 27 181 75l43.6 43.6c9.2 9.2 22.9 11.9 34.9 6.9s19.8-16.6 19.8-29.6V300.4c18.6-8.8 32-32.5 32-60.4s-13.4-51.6-32-60.4V32zm-64 76.7v262.6C357.2 317.8 280.5 288 200.7 288H192v-96h8.7c79.8 0 156.5-29.8 215.3-83.3z"/></svg>');--md-admonition-icon--success:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7l233.4-233.3c12.5-12.5 32.8-12.5 45.3 0z"/></svg>');--md-admonition-icon--question:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M256 512a256 256 0 1 0 0-512 256 256 0 1 0 0 512zm-86.2-346.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1 0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6-13.3 0-24-10.7-24-24v-13.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1 0-8.4-6.8-15.1-15.1-15.1h-58.3c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1-64 0z"/></svg>');--md-admonition-icon--warning:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224a32 32 0 1 0-64 0 32 32 0 1 0 64 0z"/></svg>');--md-admonition-icon--failure:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.1 52.4 442.6 6.5c-1.9-3.9-6.1-6.5-10.5-6.5s-8.5 2.6-10.4 6.5l-16.5 45.9-46 16.8c-4.3 1.6-7.3 5.9-7.2 10.4 0 4.5 3 8.7 7.2 10.2l45.7 16.8 16.8 45.8c1.5 4.4 5.8 7.5 10.4 7.5s8.9-3.1 10.4-7.5l16.5-45.8 45.7-16.8c4.2-1.5 7.2-5.7 7.2-10.2 0-4.6-3-8.9-7.2-10.4l-45.6-16.8zm-132.4 53c-12.5-12.5-32.8-12.5-45.3 0l-2.9 2.9c-22-8-45.8-12.3-70.5-12.3C93.1 96 0 189.1 0 304s93.1 208 208 208 208-93.1 208-208c0-24.7-4.3-48.5-12.2-70.5l2.9-2.9c12.5-12.5 12.5-32.8 0-45.3l-80-80zM200 192c-57.4 0-104 46.6-104 104v8c0 8.8-7.2 16-16 16s-16-7.2-16-16v-8c0-75.1 60.9-136 136-136h8c8.8 0 16 7.2 16 16s-7.2 16-16 16h-8z"/></svg>');--md-admonition-icon--danger:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M416 398.9c58.5-41.1 96-104.1 96-174.9C512 100.3 397.4 0 256 0S0 100.3 0 224c0 70.7 37.5 133.8 96 174.9V464c0 26.5 21.5 48 48 48h48v-48c0-8.8 7.2-16 16-16s16 7.2 16 16v48h64v-48c0-8.8 7.2-16 16-16s16 7.2 16 16v48h48c26.5 0 48-21.5 48-48v-65.1zM96 256a64 64 0 1 1 128 0 64 64 0 1 1-128 0zm256-64a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/></svg>');--md-admonition-icon--bug:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M320 0c17.7 0 32 14.3 32 32v64h120c39.8 0 72 32.2 72 72v272c0 39.8-32.2 72-72 72H168c-39.8 0-72-32.2-72-72V168c0-39.8 32.2-72 72-72h120V32c0-17.7 14.3-32 32-32zM208 384c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zM264 256a40 40 0 1 0-80 0 40 40 0 1 0 80 0zm152 40a40 40 0 1 0 0-80 40 40 0 1 0 0 80zM48 224h16v192H48c-26.5 0-48-21.5-48-48v-96c0-26.5 21.5-48 48-48zm544 0c26.5 0 48 21.5 48 48v96c0 26.5-21.5 48-48 48h-16V224h16z"/></svg>');--md-admonition-icon--example:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M288 0H128c-17.7 0-32 14.3-32 32s14.3 32 32 32v132.8c0 11.8-3.3 23.5-9.5 33.5L10.3 406.2C3.6 417.2 0 429.7 0 442.6 0 480.9 31.1 512 69.4 512h309.2c38.3 0 69.4-31.1 69.4-69.4 0-12.8-3.6-25.4-10.3-36.4L329.5 230.4c-6.2-10.1-9.5-21.7-9.5-33.5V64c17.7 0 32-14.3 32-32S337.7 0 320 0h-32zm-96 196.8V64h64v132.8c0 23.7 6.6 46.9 19 67.1l34.5 56.1h-171l34.5-56.1c12.4-20.2 19-43.4 19-67.1z"/></svg>');--md-admonition-icon--quote:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M0 216C0 149.7 53.7 96 120 96h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V216zm256 0c0-66.3 53.7-120 120-120h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64h-64c-35.3 0-64-28.7-64-64V216z"/></svg>');}</style>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../../res/extra.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            
+                .gscrollbar-fixer { padding-right: 15px; }
+                .gdesc-inner { font-size: 0.75rem; }
+                body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+                body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+                body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+                </style><script src="../../assets/javascripts/glightbox.min.js"></script></head>
+<body data-md-color-accent="red" data-md-color-primary="red" data-md-color-scheme="default" dir="ltr">
+<script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#_1">
+          跳转至
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+<nav aria-label="页眉" class="md-header__inner md-grid">
+<a aria-label="coll" class="md-header__button md-logo" data-md-component="logo" href="/" title="coll">
+<img alt="logo" src="https://ts3.cn.mm.bing.net/th?id=ODLS.40c32730-d68b-4b41-80c6-917acd50d82b&amp;w=16&amp;h=16&amp;o=6&amp;pid=1.2"/>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            coll
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Ruby on rails
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="切换到暗模式" class="md-option" data-md-color-accent="red" data-md-color-media="(prefers-color-scheme)" data-md-color-primary="red" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_3" hidden="" title="切换到暗模式">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9h-1.9M20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69m-9.15 3.96h2.3L12 9l-1.15 3.65Z"></path></svg>
+</label>
+<input aria-label="切换到默认模式" class="md-option" data-md-color-accent="green" data-md-color-media="(prefers-color-scheme: light)" data-md-color-primary="green" data-md-color-scheme="default" id="__palette_2" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="切换到默认模式">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"></path></svg>
+</label>
+<input aria-label="切换到亮模式" class="md-option" data-md-color-accent="blue" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-primary="blue" data-md-color-scheme="slate" id="__palette_3" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_2" hidden="" title="切换到亮模式">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"></path></svg>
+</label>
+</form>
+<div class="md-header__option">
+<div class="md-select">
+<button aria-label="选择当前语言" class="md-header__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24Z"></path></svg>
+</button>
+<div class="md-select__inner">
+<ul class="md-select__list">
+<li class="md-select__item">
+<a class="md-select__link" href="https://chat.0x7f.cn/" hreflang="en">
+                    chatgpt镜像站
+                  </a>
+</li>
+<li class="md-select__item">
+<a class="md-select__link" href="/zh/" hreflang="zh">
+                    中文
+                  </a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="搜索" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="搜索" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</label>
+<nav aria-label="查找" class="md-search__options">
+<a aria-label="分享" class="md-search__icon md-icon" data-clipboard="" data-clipboard-text="" data-md-component="search-share" href="javascript:void(0)" tabindex="-1" title="分享">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"></path></svg>
+</a>
+<button aria-label="清空当前内容" class="md-search__icon md-icon" tabindex="-1" title="清空当前内容" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
+</button>
+</nav>
+<div class="md-search__suggest" data-md-component="search-suggest"></div>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<nav aria-label="标签" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../main/">
+        main
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link md-tabs__link--active" href="../">
+        dosome
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../chat/">
+        chat
+      </a>
+</li>
+</ul>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="导航栏" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="coll" class="md-nav__button md-logo" data-md-component="logo" href="/" title="coll">
+<img alt="logo" src="https://ts3.cn.mm.bing.net/th?id=ODLS.40c32730-d68b-4b41-80c6-917acd50d82b&amp;w=16&amp;h=16&amp;o=6&amp;pid=1.2"/>
+</a>
+    coll
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_1" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../main/">main</a>
+<label for="__nav_1">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_1_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_1">
+<span class="md-nav__icon md-icon"></span>
+          main
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../main/graduate/">
+        Graduate
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../main/to%20be%20excellent/">
+        To be excellent
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../main/ideas/">
+        Ideas
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../main/%E8%81%8C%E4%B8%9A%E5%88%86%E6%9E%90/">
+        职业分析
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../">dosome</a>
+<label for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="true" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+          dosome
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../ruby-gosu/">
+        Ruby gosu
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../ruby-gtk3/">
+        Ruby gtk3
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          Ruby on rails
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+        Ruby on rails
+      </a>
+<nav aria-label="目录" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_1">
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1models">
+    1.Models
+  </a>
+<nav aria-label="1.Models" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#active-record-basics">
+    Active Record Basics
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#migrations">
+    Migrations
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#validations">
+    Validations
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#callbacks">
+    Callbacks
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#associations">
+    Associations
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#query-interface">
+    Query Interface
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#active-model-basics">
+    Active Model Basics
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2views">
+    2.Views
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3controllers">
+    3.Controllers
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4other-components">
+    4.Other Components
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5digging-deeper">
+    5.Digging Deeper
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#6extending-rails">
+    6.Extending Rails
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../js-vue/">
+        Js vue
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../ruby-nokogiri/">
+        Ruby nokogiri
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../cpp-qt/">
+        Cpp qt
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../python/">
+        Python
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../cpp-frame/">
+        Cpp frame
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../cpp-juce/">
+        Cpp juce
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../cpp-easyX/">
+        cpp easyX
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../chat/">chat</a>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+          chat
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="目录" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_1">
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1models">
+    1.Models
+  </a>
+<nav aria-label="1.Models" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#active-record-basics">
+    Active Record Basics
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#migrations">
+    Migrations
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#validations">
+    Validations
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#callbacks">
+    Callbacks
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#associations">
+    Associations
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#query-interface">
+    Query Interface
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#active-model-basics">
+    Active Model Basics
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2views">
+    2.Views
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3controllers">
+    3.Controllers
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4other-components">
+    4.Other Components
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5digging-deeper">
+    5.Digging Deeper
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#6extending-rails">
+    6.Extending Rails
+  </a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1>Ruby on rails</h1>
+<div class="admonition note">
+<p class="admonition-title">前言：关于如何创建网站</p>
+<ul>
+<li><code>rails</code> 作为后端</li>
+<li><a href="http://emberjs-cn.github.io/guides/getting-started/"><code>Ember.js</code></a> 作为前端</li>
+<li><a href="https://www.iteye.com/news/5718-23-best-open-source-ruby-on-rails-application">一些以 rails 作为后端的网站</a></li>
+</ul>
+</div>
+<p><a href="https://guides.rubyonrails.org/">文档</a>，<a href="https://api.rubyonrails.org/">api</a></p>
+<p>Rails是一个用Ruby编程语言编写的Web应用程序开发框架</p>
+<p>Rails哲学包括两个主要的指导原则：</p>
+<ul>
+<li><code>Don't Repeat Yourself</code>(<code>DRY</code>)：DRY 是软件开发的一个原则，它 声明“每一项知识都必须有一个单一的、明确的、权威的 系统内的代表性”。通过不一遍又一遍地写入相同的信息 同样，我们的代码更易于维护，更具可扩展性，并且错误更少</li>
+<li><code>Convention Over Configuration</code>(<code>COC</code>)：Rails 对做很多事情的最佳方式有意见 Web 应用程序中的内容，并且默认为这组约定，而不是 要求您通过无休止的配置文件指定细节</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">guide</p>
+<ol>
+<li><a href="https://guides.rubyonrails.org/getting_started.html">开始</a></li>
+<li>模型：Active Record；migration；validation；callback；Active Record关联；查询接口；Active Model Basic</li>
+<li>视图：Action View；布局和渲染；帮助程序；表单帮助程序</li>
+<li>控制器：Action Controller；从外向内布线</li>
+<li>其他组件：Active Support Core Extensions；Action Mailer Basics；Action Mailbox Basics；Action Text；Active Job Basics；Active Storage Overview；Action Cable Overview；Webpacker</li>
+<li>深入挖掘：国际化；测试；安全；配置；命令行；Asset 管线；使用 JavaScript；初始化过程；自动加载和重新加载常量；Classic to Zeitwerk HOWTO；rails 缓存；将 Rails 用于仅限 API 的应用程序；Active Record 和 PostgreSQL；Active Record与多种数据库；Active Record加密</li>
+<li>Extending rails：创建插件；Rails on Rack；建和自定义 Rails 生成器和模板；Engines；Rails 中的线程和代码执行</li>
+</ol>
+</div>
+<div class="highlight"><span class="filename">依赖库大全</span><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>Using rake 13.0.6
+<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a>Using concurrent-ruby 1.2.2
+<a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a>Using minitest 5.18.0
+<a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a>Using builder 3.2.4
+<a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a>Using erubi 1.12.0
+<a href="#__codelineno-0-6" id="__codelineno-0-6" name="__codelineno-0-6"></a>Using racc 1.6.2
+<a href="#__codelineno-0-7" id="__codelineno-0-7" name="__codelineno-0-7"></a>Using crass 1.0.6
+<a href="#__codelineno-0-8" id="__codelineno-0-8" name="__codelineno-0-8"></a>Using rack 2.2.7
+<a href="#__codelineno-0-9" id="__codelineno-0-9" name="__codelineno-0-9"></a>Using nio4r 2.5.9
+<a href="#__codelineno-0-10" id="__codelineno-0-10" name="__codelineno-0-10"></a>Using websocket-extensions 0.1.5
+<a href="#__codelineno-0-11" id="__codelineno-0-11" name="__codelineno-0-11"></a>Using bundler 2.4.12
+<a href="#__codelineno-0-12" id="__codelineno-0-12" name="__codelineno-0-12"></a>Using marcel 1.0.2
+<a href="#__codelineno-0-13" id="__codelineno-0-13" name="__codelineno-0-13"></a>Using mini_mime 1.1.2
+<a href="#__codelineno-0-14" id="__codelineno-0-14" name="__codelineno-0-14"></a>Using date 3.3.3
+<a href="#__codelineno-0-15" id="__codelineno-0-15" name="__codelineno-0-15"></a>Using timeout 0.3.2
+<a href="#__codelineno-0-16" id="__codelineno-0-16" name="__codelineno-0-16"></a>Using public_suffix 5.0.1
+<a href="#__codelineno-0-17" id="__codelineno-0-17" name="__codelineno-0-17"></a>Using bindex 0.8.1
+<a href="#__codelineno-0-18" id="__codelineno-0-18" name="__codelineno-0-18"></a>Using msgpack 1.7.0
+<a href="#__codelineno-0-19" id="__codelineno-0-19" name="__codelineno-0-19"></a>Using matrix 0.4.2
+<a href="#__codelineno-0-20" id="__codelineno-0-20" name="__codelineno-0-20"></a>Using regexp_parser 2.8.0
+<a href="#__codelineno-0-21" id="__codelineno-0-21" name="__codelineno-0-21"></a>Using io-console 0.6.0
+<a href="#__codelineno-0-22" id="__codelineno-0-22" name="__codelineno-0-22"></a>Using method_source 1.0.0
+<a href="#__codelineno-0-23" id="__codelineno-0-23" name="__codelineno-0-23"></a>Using thor 1.2.1
+<a href="#__codelineno-0-24" id="__codelineno-0-24" name="__codelineno-0-24"></a>Using zeitwerk 2.6.8
+<a href="#__codelineno-0-25" id="__codelineno-0-25" name="__codelineno-0-25"></a>Using rexml 3.2.5
+<a href="#__codelineno-0-26" id="__codelineno-0-26" name="__codelineno-0-26"></a>Using rubyzip 2.3.2
+<a href="#__codelineno-0-27" id="__codelineno-0-27" name="__codelineno-0-27"></a>Using websocket 1.2.9
+<a href="#__codelineno-0-28" id="__codelineno-0-28" name="__codelineno-0-28"></a>Using sqlite3 1.6.2 (x64-mingw-ucrt)
+<a href="#__codelineno-0-29" id="__codelineno-0-29" name="__codelineno-0-29"></a>Using i18n 1.13.0
+<a href="#__codelineno-0-30" id="__codelineno-0-30" name="__codelineno-0-30"></a>Using tzinfo 2.0.6
+<a href="#__codelineno-0-31" id="__codelineno-0-31" name="__codelineno-0-31"></a>Using nokogiri 1.14.3 (x64-mingw-ucrt)
+<a href="#__codelineno-0-32" id="__codelineno-0-32" name="__codelineno-0-32"></a>Using rack-test 2.1.0
+<a href="#__codelineno-0-33" id="__codelineno-0-33" name="__codelineno-0-33"></a>Using puma 5.6.5
+<a href="#__codelineno-0-34" id="__codelineno-0-34" name="__codelineno-0-34"></a>Using sprockets 4.2.0
+<a href="#__codelineno-0-35" id="__codelineno-0-35" name="__codelineno-0-35"></a>Using websocket-driver 0.7.5
+<a href="#__codelineno-0-36" id="__codelineno-0-36" name="__codelineno-0-36"></a>Using net-protocol 0.2.1
+<a href="#__codelineno-0-37" id="__codelineno-0-37" name="__codelineno-0-37"></a>Using addressable 2.8.4
+<a href="#__codelineno-0-38" id="__codelineno-0-38" name="__codelineno-0-38"></a>Using bootsnap 1.16.0
+<a href="#__codelineno-0-39" id="__codelineno-0-39" name="__codelineno-0-39"></a>Using reline 0.3.3
+<a href="#__codelineno-0-40" id="__codelineno-0-40" name="__codelineno-0-40"></a>Using activesupport 7.0.4.3
+<a href="#__codelineno-0-41" id="__codelineno-0-41" name="__codelineno-0-41"></a>Using xpath 3.2.0
+<a href="#__codelineno-0-42" id="__codelineno-0-42" name="__codelineno-0-42"></a>Using selenium-webdriver 4.9.1
+<a href="#__codelineno-0-43" id="__codelineno-0-43" name="__codelineno-0-43"></a>Using tzinfo-data 1.2023.3
+<a href="#__codelineno-0-44" id="__codelineno-0-44" name="__codelineno-0-44"></a>Using net-imap 0.3.4
+<a href="#__codelineno-0-45" id="__codelineno-0-45" name="__codelineno-0-45"></a>Using net-pop 0.1.2
+<a href="#__codelineno-0-46" id="__codelineno-0-46" name="__codelineno-0-46"></a>Using net-smtp 0.3.3
+<a href="#__codelineno-0-47" id="__codelineno-0-47" name="__codelineno-0-47"></a>Fetching loofah 2.21.1
+<a href="#__codelineno-0-48" id="__codelineno-0-48" name="__codelineno-0-48"></a>Using irb 1.6.4
+<a href="#__codelineno-0-49" id="__codelineno-0-49" name="__codelineno-0-49"></a>Using rails-dom-testing 2.0.3
+<a href="#__codelineno-0-50" id="__codelineno-0-50" name="__codelineno-0-50"></a>Using globalid 1.1.0
+<a href="#__codelineno-0-51" id="__codelineno-0-51" name="__codelineno-0-51"></a>Using activemodel 7.0.4.3
+<a href="#__codelineno-0-52" id="__codelineno-0-52" name="__codelineno-0-52"></a>Using capybara 3.39.0
+<a href="#__codelineno-0-53" id="__codelineno-0-53" name="__codelineno-0-53"></a>Using webdrivers 5.2.0
+<a href="#__codelineno-0-54" id="__codelineno-0-54" name="__codelineno-0-54"></a>Using activejob 7.0.4.3
+<a href="#__codelineno-0-55" id="__codelineno-0-55" name="__codelineno-0-55"></a>Using activerecord 7.0.4.3
+<a href="#__codelineno-0-56" id="__codelineno-0-56" name="__codelineno-0-56"></a>Using mail 2.8.1
+<a href="#__codelineno-0-57" id="__codelineno-0-57" name="__codelineno-0-57"></a>Using debug 1.8.0
+<a href="#__codelineno-0-58" id="__codelineno-0-58" name="__codelineno-0-58"></a>Installing loofah 2.21.1
+<a href="#__codelineno-0-59" id="__codelineno-0-59" name="__codelineno-0-59"></a>Using rails-html-sanitizer 1.5.0
+<a href="#__codelineno-0-60" id="__codelineno-0-60" name="__codelineno-0-60"></a>Using actionview 7.0.4.3
+<a href="#__codelineno-0-61" id="__codelineno-0-61" name="__codelineno-0-61"></a>Using actionpack 7.0.4.3
+<a href="#__codelineno-0-62" id="__codelineno-0-62" name="__codelineno-0-62"></a>Using jbuilder 2.11.5
+<a href="#__codelineno-0-63" id="__codelineno-0-63" name="__codelineno-0-63"></a>Using actioncable 7.0.4.3
+<a href="#__codelineno-0-64" id="__codelineno-0-64" name="__codelineno-0-64"></a>Using activestorage 7.0.4.3
+<a href="#__codelineno-0-65" id="__codelineno-0-65" name="__codelineno-0-65"></a>Using actionmailer 7.0.4.3
+<a href="#__codelineno-0-66" id="__codelineno-0-66" name="__codelineno-0-66"></a>Using railties 7.0.4.3
+<a href="#__codelineno-0-67" id="__codelineno-0-67" name="__codelineno-0-67"></a>Using sprockets-rails 3.4.2
+<a href="#__codelineno-0-68" id="__codelineno-0-68" name="__codelineno-0-68"></a>Using actionmailbox 7.0.4.3
+<a href="#__codelineno-0-69" id="__codelineno-0-69" name="__codelineno-0-69"></a>Using actiontext 7.0.4.3
+<a href="#__codelineno-0-70" id="__codelineno-0-70" name="__codelineno-0-70"></a>Using importmap-rails 1.1.6
+<a href="#__codelineno-0-71" id="__codelineno-0-71" name="__codelineno-0-71"></a>Using stimulus-rails 1.2.1
+<a href="#__codelineno-0-72" id="__codelineno-0-72" name="__codelineno-0-72"></a>Using turbo-rails 1.4.0
+<a href="#__codelineno-0-73" id="__codelineno-0-73" name="__codelineno-0-73"></a>Using web-console 4.2.0
+<a href="#__codelineno-0-74" id="__codelineno-0-74" name="__codelineno-0-74"></a>Using rails 7.0.4.3
+</code></pre></div>
+<h3 id="_1"></h3>
+<table>
+<thead>
+<tr>
+<th align="center">File/Folder</th>
+<th align="center">Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">app/</td>
+<td align="center">Contains the controllers, models, views, helpers, mailers, channels, jobs, and assets for your application. You'll focus on this folder for the remainder of this guide.</td>
+</tr>
+<tr>
+<td align="center">bin/</td>
+<td align="center">Contains the rails script that starts your app and can contain other scripts you use to set up, update, deploy, or run your application.</td>
+</tr>
+<tr>
+<td align="center">config/</td>
+<td align="center">Contains configuration for your application's routes, database, and more. This is covered in more detail in Configuring Rails Applications.</td>
+</tr>
+<tr>
+<td align="center">config.ru</td>
+<td align="center">Rack configuration for Rack-based servers used to start the application. For more information about Rack, see the Rack website.</td>
+</tr>
+<tr>
+<td align="center">db/</td>
+<td align="center">Contains your current database schema, as well as the database migrations.</td>
+</tr>
+<tr>
+<td align="center">Gemfile</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">Gemfile.lock</td>
+<td align="center">These files allow you to specify what gem dependencies are needed for your Rails application. These files are used by the Bundler gem. For more information about Bundler, see the Bundler website.</td>
+</tr>
+<tr>
+<td align="center">lib/</td>
+<td align="center">Extended modules for your application.</td>
+</tr>
+<tr>
+<td align="center">log/</td>
+<td align="center">Application log files.</td>
+</tr>
+<tr>
+<td align="center">public/</td>
+<td align="center">Contains static files and compiled assets. When your app is running, this directory will be exposed as-is.</td>
+</tr>
+<tr>
+<td align="center">Rakefile</td>
+<td align="center">This file locates and loads tasks that can be run from the command line. The task definitions are defined throughout the components of Rails. Rather than changing Rakefile, you should add your own tasks by adding files to the lib/tasks directory of your application.</td>
+</tr>
+<tr>
+<td align="center">README.md</td>
+<td align="center">This is a brief instruction manual for your application. You should edit this file to tell others what your application does, how to set it up, and so on.</td>
+</tr>
+<tr>
+<td align="center">storage/</td>
+<td align="center">Active Storage files for Disk Service. This is covered in Active Storage Overview.</td>
+</tr>
+<tr>
+<td align="center">test/</td>
+<td align="center">Unit tests, fixtures, and other test apparatus. These are covered in Testing Rails Applications.</td>
+</tr>
+<tr>
+<td align="center">tmp/</td>
+<td align="center">Temporary files (like cache and pid files).</td>
+</tr>
+<tr>
+<td align="center">vendor/</td>
+<td align="center">A place for all third-party code. In a typical Rails application this includes vendored gems.</td>
+</tr>
+<tr>
+<td align="center">.gitattributes</td>
+<td align="center">This file defines metadata for specific paths in a git repository. This metadata can be used by git and other tools to enhance their behavior. See the gitattributes documentation for more information.</td>
+</tr>
+<tr>
+<td align="center">.gitignore</td>
+<td align="center">This file tells git which files (or patterns) it should ignore. See GitHub - Ignoring files for more information about ignoring files.</td>
+</tr>
+<tr>
+<td align="center">.ruby-version</td>
+<td align="center">This file contains the default Ruby version.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition step">
+<p class="admonition-title">Step</p>
+<ul>
+<li><a href="https://www.ruby-lang.org/en/documentation/installation/">安装ruby</a>，<a href="https://www.sqlite.org/">安装SQLite3</a></li>
+<li>安装rails：<code>gem install rails</code></li>
+<li>创建app：<code>rails new &lt;工程名&gt;</code></li>
+<li>运行：<code>ruby ./bin/rails server</code></li>
+<li>路由：在 <code>config/routes.rb</code> 文件中的 <code>Rails.application.routes.draw</code> 进行配置<ul>
+<li>get方法：<code>get "访问的资源路径", to: "Controller名#action名"</code></li>
+<li><code>root "Controller名#action名"</code>：相当于 <code>get "/", to: "Controller名#action名"</code> 的简写</li>
+<li><code>resources :Controller名</code>：为该 Controller 配置 rails 默认的 action，如：<code>index</code>，<code>show</code>类；<code>new</code>s<code>create</code>；<code>edit</code>，<code>update</code>；<code>destroy</code></li>
+</ul>
+</li>
+<li>自动导入特性：除了rails的模块外，我们仅需对以下两种情况进行<code>require</code>导入：<ul>
+<li>导入 <code>lib</code> 目录下的文件</li>
+<li>导入 <code>Gemfile</code> 文件中具有 <code>require: false</code> 的 <code>gem</code> 依赖</li>
+</ul>
+</li>
+<li>创建 <code>controller</code>：<ul>
+<li>执行命令：<code>ruby bin/rails generate controller &lt;控制器名&gt; &lt;action名&gt; [--skip-routes]</code></li>
+<li>主要能创建 controller对应的文件 <code>app/controllers/&lt;控制器名&gt;_controller.rb</code>，view对应的文件 <code>app/views/&lt;控制器名&gt;/&lt;action名&gt;.html.erb</code> 两个文件；并且会自动对路由进行配置（资源名为：<code>控制器名/action名</code>）</li>
+<li>另外，会创建 <code>test/controllers/&lt;控制器名&gt;_controller_test.rb</code>，<code>app/helpers/&lt;控制器名&gt;_helper.rb</code></li>
+<li>注：我们创建的 <code>XxxController</code> 会继承自 <code>ApplicationController</code>，但是我们无需做 <code>require "application_controller"</code> 类似的导入，因为rails帮我们做了<ul>
+<li>另外，Controller名注意首字母大写，并且是复数</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>创建 <code>model</code>：<ul>
+<li>如：<code>bin/rails generate model &lt;model名&gt; title:string body:text</code></li>
+<li>主要为了创建 <code>app/models/&lt;model名&gt;.rb</code>，<code>db/migrate/&lt;timestamp&gt;_create_articles.rb</code></li>
+<li>此外会创建文件 <code>test/models/_test.rb</code> ...</li>
+<li>注：rails会给每个model对应的数据库表添加 <code>id</code>，<code>created_at</code>，<code>updated_at</code> 属性</li>
+<li>数据库迁移：<code>ruby bin/rails db:migrate</code><ul>
+<li>相关命令：<code>rails generate migration &lt;migration_name&gt;</code>，<code>bin/rails db:migrate VERSION=&lt;version&gt;</code></li>
+</ul>
+</li>
+<li>使用<code>model</code>与数据库交互：<ul>
+<li>打开控制台：<code>ruby bin/rails console</code></li>
+<li>创建model对象：<code>&lt;model名&gt;.new(...)</code></li>
+<li>model对象保存：<code>.save</code></li>
+</ul>
+</li>
+<li>model的类方法：<ul>
+<li><code>all</code>：返回所有实例；<code>find &lt;id&gt;</code> 查找特定实例</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>编辑view：<ul>
+<li><code>view</code> 位于 <code>app/views/&lt;Controller名&gt;/&lt;action名&gt;.html.erb</code>（注意到每个视图都对应于一个 特定Controller的某个特定action）</li>
+<li>两种 erb tag：<code>&lt;% %&gt;</code>，<code>&lt;%= %&gt;</code></li>
+<li><code>&lt;model名&gt;_url</code>，<code>&lt;model名&gt;_path</code> 将获取对应模型的 url 或 资源路径</li>
+</ul>
+</li>
+<li>CRUD：接下来介绍 rails 默认的 action（前提是路由中对该 Controller 使用了 <code>resources</code> 方法）<ul>
+<li><code>new</code>：用于实例化空的 model，以便在其渲染的 erb 文件中使用<ul>
+<li>可以借助 <a href="https://guides.rubyonrails.org/form_helpers.html"><code>Form Builder</code></a>（<code>form_with</code>）</li>
+<li><a href="https://guides.rubyonrails.org/action_controller_overview.html#strong-parameters">强参数</a></li>
+<li>验证：model 中声明 <code>validates</code> 可以应用于 model 中某些属性值的验证，而且该验证在保存数据之前执行，如果检查失败，则不保存，添加到 model 对象的 <code>errors</code> 属性中</li>
+</ul>
+</li>
+<li><code>create</code>：用于实例化带值的 model，并用于存储到数据库中，若存储失败，可以 <code>redirect_to</code> 到成功页面，或用 <code>render</code> 来显示某些错误（<a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/422">错误码参加此链接</a>）<ul>
+<li>可以和 <code>/&lt;model名s&gt;/&lt;model id&gt;</code> 匹配</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="https://guides.rubyonrails.org/layouts_and_rendering.html#using-partials">使用 render 渲染 partials</a></li>
+</ul>
+</div>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>命令 ruby bin/rails ...
+<a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a>
+<a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a>generate (contoller, model)
+<a href="#__codelineno-1-4" id="__codelineno-1-4" name="__codelineno-1-4"></a>
+<a href="#__codelineno-1-5" id="__codelineno-1-5" name="__codelineno-1-5"></a>db:migrate
+<a href="#__codelineno-1-6" id="__codelineno-1-6" name="__codelineno-1-6"></a>
+<a href="#__codelineno-1-7" id="__codelineno-1-7" name="__codelineno-1-7"></a>console
+<a href="#__codelineno-1-8" id="__codelineno-1-8" name="__codelineno-1-8"></a>
+<a href="#__codelineno-1-9" id="__codelineno-1-9" name="__codelineno-1-9"></a>routes
+</code></pre></div>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<ul>
+<li>如何保持程序健壮性：即便中途添加类的属性也不会牵扯到过多的改动<ul>
+<li>可能遇到的问题：添加类属性后，需要给调用的构造函数添加参数，可能还要给model添加 <code>validate</code> 或 方法</li>
+</ul>
+</li>
+</ul>
+</div>
+<p><a href="https://guides.rubyonrails.org/index.html">参考</a></p>
+<h3 id="1models">1.Models</h3>
+<h4 id="active-record-basics">Active Record Basics</h4>
+<div class="admonition note">
+<p class="admonition-title">概念</p>
+<ul>
+<li><code>Active Record</code>，其对象携带持久化数据和行为</li>
+<li><code>ORM</code>(Object Relational Mapping)，是一种将应用程序的富对象与 RDBMS 中的表连接起来的技术</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title"><code>Active Record</code> 作为 ORM 框架，其提供的机制：</p>
+<ul>
+<li>表示 models 和它们的数据</li>
+<li>表示 models 之间的关联</li>
+<li>表示 models 之间的继承关系</li>
+<li>持久化到数据库之前，验证(<code>validate</code>) models 的合法性</li>
+<li>以面向对象方式执行数据库操作</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Active Record 的配置约定</p>
+<ul>
+<li>命名<ul>
+<li>model 类(<code>model/class</code>)以驼峰命名(<code>CamelCase form</code>)，对应的表(<code>table/schema</code>)以 <code>snack_case form</code>命名</li>
+<li>rails具有强大的复数化机制：model 对应的表会被 rails 复数化，如：Article -&gt; articles，LineItem -&gt; line_items，Mouse -&gt; mice</li>
+<li>注：第一次创建表由 rails 负责</li>
+</ul>
+</li>
+<li>架构(<code>schema</code>)<ul>
+<li>foreign key：按照 <code>singularized_table_name_id</code> 的模式命名，即 <code>&lt;model名&gt;_id</code></li>
+<li>primary key：默认情况下，以 <code>id</code> 作为主键；使用 <code>migration</code> 创建表时，将自动创建此列</li>
+<li>还有一些添加到 Active Record 的可选列名<ul>
+<li><code>created_at</code> - 首次创建记录时的时间</li>
+<li><code>updated_at</code> - 最后一次更新记录的时间</li>
+<li><code>lock_version</code> - 添加 <a href="https://api.rubyonrails.org/v7.0.4.2/classes/ActiveRecord/Locking.html"><code>optimistic locking</code></a> 到model</li>
+<li><code>type</code> - 制定模型使用 <a href="https://api.rubyonrails.org/v7.0.4.2/classes/ActiveRecord/Base.html#class-ActiveRecord::Base-label-Single+table+inheritance"><code>Single Table Inheritance</code></a> 单表继承</li>
+<li><code>(association_name)_type</code> - 存储 <a href="https://guides.rubyonrails.org/association_basics.html#polymorphic-associations"><code>polymorphic associations</code></a> 多态性关联</li>
+<li><code>(table_name)_count</code> - 存储对象关系的数量</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">创建 Active Record</p>
+<ul>
+<li>直接继承 <code>ApplicationRecord</code> 类</li>
+<li>注：<code>app/models/</code> 下除了有 <code>application_record.rb</code> 外，还有类似 <code>&lt;model名&gt;.rb</code> 的文件，这些文件不显式表示这些 model 的数据构成，而应该在 <code>db/migrate/</code> 下会记录model数据结构的变动</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">覆盖命名约定</p>
+<ul>
+<li><code>ActiveRecord::Base</code> 定义了属性 <code>table_name</code> 和 <code>primary_key</code>，表示当前 model 对应的数据库表名，及其主键名</li>
+<li>而自定义的 model （位于 <code>app/models/</code> 目录下）应该继承 <code>ApplicationRecord</code>， <code>ApplicationRecord</code> 继承了 <code>ActiveRecord::Base</code>，因而自定义 model 类在定义时可以将 <code>table_name</code> 和 <code>primary_key</code> 覆盖</li>
+<li>如果这么做，则必须手动自定义托管类名夹具，<a href="https://guides.rubyonrails.org/active_record_basics.html">参考</a></li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">CRUD</p>
+<ul>
+<li><code>create</code>：有两种方式保存数据：<ul>
+<li>通过类方法 <code>create</code> 保存并返回 model 对象，其参数由构造方法 <code>new</code> 相同</li>
+<li>通过构造方法 <code>new</code> 创建 model 对象，再使用实例方法 <code>save</code> 保存对象</li>
+<li>注：Active Record 对象还可以用 哈希 或 块 来创建，前者较为常用</li>
+</ul>
+</li>
+<li><code>Read</code>：均通过实例方法来执行查询：<ul>
+<li><code>all</code>：返表内所有记录</li>
+<li><code>first</code>：返回第一个记录</li>
+<li><code>find_by</code>：通过哈希查找首个匹配的记录，如：<code>User.find_by(name: 'David')</code></li>
+<li><code>where</code>：通过哈希查找所有匹配的记录</li>
+<li><code>order</code>：通过哈希指定记录集合的排序方式</li>
+<li><a href="https://guides.rubyonrails.org/active_record_querying.html">详细参考（rails提供大量查询api）</a></li>
+</ul>
+</li>
+<li><code>update</code>：<ul>
+<li>单个记录更新有两种方式：首先用 <code>find_by</code> 查询到特定对象，保存到内存中<ul>
+<li>调用实例方法 <code>&lt;属性名&gt;=</code> 方法修改属性，然后调用 <code>save</code></li>
+<li>调用示例方法 <code>update</code>，参数为一个哈希</li>
+</ul>
+</li>
+<li>更新所有记录：<ul>
+<li>类方法 <code>update_all</code>，参数为字符串，类似于 sql 中 where 子句的内容</li>
+<li>类方法 <code>update(:all, &lt;hash&gt;)</code> 也是更新所有记录</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>delete</code>：<ul>
+<li>删除单个记录：首先调用类方法 <code>find_by</code> 查询指定对象，保存到内存中，再调用示例方法 <code>destroy</code></li>
+<li>删除多个记录：<ul>
+<li>类方法  <code>destroy_by</code>，参数为哈希</li>
+<li>类方法 <code>destroy_all</code>，删除所有记录</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">数据验证 <code>validate</code></p>
+<ul>
+<li>在 <code>app/models/</code> 内的 model 文件中声明 <code>validate</code>，其参数为 <code>属性名tag, 哈希</code>，如：<code>validates :name, presence: true</code></li>
+<li>这意味着在对 model 执行 <code>save</code> 或 <code>update</code> 操作时，会拒绝执行规定过的非法行为，甚至报错</li>
+<li>注：类似 <code>save</code> 和 <code>update</code> 方法以尝试保存或更新数据时，方法会返回 bool 值；而 <code>save!</code> 和 <code>update!</code> 在执行不超过时报错</li>
+<li><a href="https://guides.rubyonrails.org/active_record_validations.html">更多内容</a></li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">回调 <code>callback</code></p>
+<ul>
+<li>Active Record callback 允许您将代码附加到 model 的生命周期</li>
+<li>可以在执行 <code>create</code>，<code>update</code>，<code>destroy</code> 时调用代码</li>
+<li><a href="https://guides.rubyonrails.org/active_record_callbacks.html">详见该链接</a> </li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">迁移 migration</p>
+<ul>
+<li>Rails 提供了一种特定于域的语言 <code>domain-specific language</code>，用于管理名为 <code>migrations</code> 的数据库<code>scheme</code></li>
+<li>migration 被存储在文件中，可以使用rake针对Active Record支持的任何数据库执行</li>
+<li><code>ruby bin/rails db:migrate</code> 用于实际创建表</li>
+<li><code>ruby bin/rails db:rollback</code> 用于回滚</li>
+<li><a href="https://guides.rubyonrails.org/active_record_migrations.html">详见此链接</a></li>
+</ul>
+</div>
+<h4 id="migrations">Migrations</h4>
+<div class="admonition note">
+<p class="admonition-title">1.migration 概述</p>
+<ul>
+<li>迁移是一种随实践推移以一致的方式更改数据库的方法；它们使用了 ruby DSL，因而不用手动编写 SQL，允许架构和修改独立于数据库</li>
+<li>每次迁移可被视为数据库的新版本</li>
+<li>一个 架构开始时没有任何内容，每次迁移都会对其进行修改以 添加，删除 表 / 列 / 条目</li>
+<li>默认情况下，rails 会使用事务包裹 <code>db/migrate/</code> 下的迁移文件的 <code>change</code> 方法下 <code>create_table</code>，<code>drop_table</code> 等 DDL 语句；而方法 <code>disable_ddl_transaction!</code> 会取消这种事务包裹（需要注意的是，使用 disable_ddl_transaction! 不建议在非灾难情况下用于生产环境，因为这可能会导致不能撤消的更改）</li>
+<li>
+<ul>
+<li>另一种方法：在 <code>up</code> 方法下定义用于执行的操作，在 <code>down</code> 方法下定义用于撤销的操作</li>
+</ul>
+<p><code>reversible</code> 方法可用于 <code>change</code> 方法下，其接收两个块，一个用于执行操作，另一个用于撤销操作；在迁移上运行 <code>ruby bin/rails db:migrate</code> 将运行这些操作。在迁移上运行 <code>ruby bin/rails db:rollback</code> 将运行相应的撤销操作，<a href="https://pastebin.com/tzawcLaX">例如(reversible)</a></p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="sr">//</span><span class="w"> </span><span class="err">方法</span><span class="mi">1</span>
+<a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="k">class</span><span class="w"> </span><span class="nc">AddEmailToUsers</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Migration</span><span class="o">[</span><span class="mi">6</span><span class="o">.</span><span class="mi">1</span><span class="o">]</span>
+<a href="#__codelineno-2-3" id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="w">  </span><span class="k">def</span><span class="w"> </span><span class="nf">change</span>
+<a href="#__codelineno-2-4" id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="w">    </span><span class="n">reversible</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="o">|</span><span class="n">dir</span><span class="o">|</span>
+<a href="#__codelineno-2-5" id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="w">      </span><span class="n">dir</span><span class="o">.</span><span class="n">up</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">add_column</span><span class="w"> </span><span class="ss">:users</span><span class="p">,</span><span class="w"> </span><span class="ss">:email</span><span class="p">,</span><span class="w"> </span><span class="ss">:string</span><span class="w"> </span><span class="p">}</span>
+<a href="#__codelineno-2-6" id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="w">      </span><span class="n">dir</span><span class="o">.</span><span class="n">down</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">remove_column</span><span class="w"> </span><span class="ss">:users</span><span class="p">,</span><span class="w"> </span><span class="ss">:email</span><span class="w"> </span><span class="p">}</span>
+<a href="#__codelineno-2-7" id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="w">    </span><span class="k">end</span>
+<a href="#__codelineno-2-8" id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="w">  </span><span class="k">end</span>
+<a href="#__codelineno-2-9" id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="k">end</span>
+<a href="#__codelineno-2-10" id="__codelineno-2-10" name="__codelineno-2-10"></a><span class="sr">//</span><span class="w"> </span><span class="err">方法</span><span class="mi">2</span>
+<a href="#__codelineno-2-11" id="__codelineno-2-11" name="__codelineno-2-11"></a><span class="k">class</span><span class="w"> </span><span class="nc">AddEmailToUsers</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Migration</span><span class="o">[</span><span class="mi">6</span><span class="o">.</span><span class="mi">1</span><span class="o">]</span>
+<a href="#__codelineno-2-12" id="__codelineno-2-12" name="__codelineno-2-12"></a><span class="w">  </span><span class="k">def</span><span class="w"> </span><span class="nf">up</span>
+<a href="#__codelineno-2-13" id="__codelineno-2-13" name="__codelineno-2-13"></a><span class="w">    </span><span class="n">add_column</span><span class="w"> </span><span class="ss">:users</span><span class="p">,</span><span class="w"> </span><span class="ss">:email</span><span class="p">,</span><span class="w"> </span><span class="ss">:string</span>
+<a href="#__codelineno-2-14" id="__codelineno-2-14" name="__codelineno-2-14"></a><span class="w">  </span><span class="k">end</span>
+<a href="#__codelineno-2-15" id="__codelineno-2-15" name="__codelineno-2-15"></a><span class="w">  </span><span class="k">def</span><span class="w"> </span><span class="nf">down</span>
+<a href="#__codelineno-2-16" id="__codelineno-2-16" name="__codelineno-2-16"></a><span class="w">    </span><span class="n">remove_column</span><span class="w"> </span><span class="ss">:users</span><span class="p">,</span><span class="w"> </span><span class="ss">:email</span>
+<a href="#__codelineno-2-17" id="__codelineno-2-17" name="__codelineno-2-17"></a><span class="w">  </span><span class="k">end</span>
+<a href="#__codelineno-2-18" id="__codelineno-2-18" name="__codelineno-2-18"></a><span class="k">end</span>
+</code></pre></div>
+</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">2.创建迁移文件</p>
+<ul>
+<li>迁移文件以 <code>YYYYMMDDHHMMSS_&lt;do_something&gt;.rb</code> 命名<ul>
+<li><code>&lt;do_something&gt;</code> 是以 <strong>snack 形式命名</strong>，如：<code>create_articles</code>，<code>add_status_to_articles</code>，<code>remove_status_from_articles</code></li>
+<li>迁移文件有一个类，该类对应于 <code>&lt;do_something&gt;</code>，但是以 <strong>驼峰形式命名</strong>，如：<code>CreateArticles</code>，<code>AddStatusToArticles</code>，<code>RemoveStatusFromArticles</code></li>
+</ul>
+</li>
+<li>迁移文件提供的命令：<ul>
+<li><code>add_column</code>，<code>remove_column</code>，<code>add_index</code>，<code>create_table</code>，<code>add_reference</code>，<code>create_join_table</code></li>
+</ul>
+</li>
+<li>迁移文件提供的列类型：<ul>
+<li><code>references</code></li>
+<li><code>string</code>，<code>text</code></li>
+<li><code>timestamps</code></li>
+<li><code>decimal</code></li>
+</ul>
+</li>
+<li>创建独立的迁移文件：<ol>
+<li><code>ruby bin/rails generate migration <mark class="critic">&lt;DoSomething&gt;</mark></code>：创建空的迁移文件</li>
+<li><code>ruby bin/rails generate migration Add<mark class="critic">&lt;ColumnName&gt;</mark>To<mark class="critic">&lt;TableName&gt;</mark> <mark class="critic">&lt;column_name&gt;:&lt;type&gt;</mark>[:index]</code>：为表添加某一列；可选择性添加索引 <code>index</code><ul>
+<li>迁移文件的主要内容：<code>add_column :&lt;table_name&gt;, :&lt;column_name&gt;, :&lt;type&gt;</code></li>
+<li>如果添加了索引：<code>add_index :&lt;table_name&gt;, :&lt;column_name&gt;</code></li>
+</ul>
+</li>
+<li><code>ruby bin/rails generate migration Remove<mark class="critic">&lt;ColumnName&gt;</mark>To<mark class="critic">&lt;TableName&gt;</mark> <mark class="critic">&lt;column_name&gt;:&lt;type&gt;</mark></code>：为表删除某一列<ul>
+<li>迁移文件的主要内容：<code>remove_column :&lt;table_name&gt;, :&lt;column_name&gt;, :&lt;type&gt;</code></li>
+</ul>
+</li>
+<li><code>ruby bin/rails generate migration AddDetailsTo<mark class="critic">&lt;TableName&gt;</mark> (<mark class="critic">&lt;column_name&gt;:&lt;type&gt;</mark>)*</code>：为表添加多列</li>
+<li><code>ruby bin/rails generate migration Create<mark class="critic">&lt;TableName&gt;</mark> (<mark class="critic">&lt;column_name&gt;:&lt;type&gt;</mark>)*</code>：创建表</li>
+<li><code>ruby bin/rails generate migration Add<mark class="critic">&lt;RefName&gt;</mark>RefTo<mark class="critic">&lt;TableName&gt;</mark> <mark class="critic">&lt;column_name&gt;</mark>:references</code>：添加外键<ul>
+<li><code>add_reference :<mark class="critic">&lt;TableName&gt;</mark>, :<mark class="critic">&lt;RefName&gt;</mark>, foreign_key: true</code></li>
+</ul>
+</li>
+<li><code>ruby bin/rails generate migration CreateJoinTable<mark class="critic">&lt;TableName1&gt;</mark><mark class="critic">&lt;TableName2&gt;</mark> <mark class="critic">&lt;table_name1&gt;</mark> <mark class="critic">&lt;table_name2&gt;</mark></code>：生成连接表 <code>join_table</code><ul>
+<li><code>create_join_table :<mark class="critic">&lt;table_name1&gt;</mark>, :<mark class="critic">&lt;table_name2&gt;</mark> do { |t| ... }</code></li>
+</ul>
+</li>
+</ol>
+</li>
+<li>利用生成器创建迁移文件：<ul>
+<li>生成器有：<code>model</code>, <code>resource</code>, <code>scaffold</code></li>
+<li>如 model 生成器：<code>ruby bin/rails generate model <mark class="critic">&lt;TableName&gt;</mark> (<mark class="critic">&lt;column_name&gt;:&lt;type&gt;</mark>)*</code>：创建 model，并为其创建迁移文件</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>创建独立的迁移文件时，可以用大括号 <code>{}</code> 括起修饰符</li>
+<li>如：</li>
+</ul>
+<p>传递修饰符：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="n">ruby</span><span class="w"> </span><span class="n">bin</span><span class="o">/</span><span class="n">rails</span><span class="w"> </span><span class="n">generate</span><span class="w"> </span><span class="n">migration</span><span class="w"> </span><span class="no">AddDetailsToProducts</span><span class="w"> </span><span class="s1">'price:decimal{5,2}'</span><span class="w"> </span><span class="ss">supplier</span><span class="p">:</span><span class="n">references</span><span class="p">{</span><span class="n">polymorphic</span><span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">AddDetailsToProducts</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Migration</span><span class="o">[</span><span class="mi">7</span><span class="o">.</span><span class="mi">0</span><span class="o">]</span>
+<a href="#__codelineno-4-2" id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="w">  </span><span class="k">def</span><span class="w"> </span><span class="nf">change</span>
+<a href="#__codelineno-4-3" id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="w">    </span><span class="n">add_column</span><span class="w"> </span><span class="ss">:products</span><span class="p">,</span><span class="w"> </span><span class="ss">:price</span><span class="p">,</span><span class="w"> </span><span class="ss">:decimal</span><span class="p">,</span><span class="w"> </span><span class="ss">precision</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="ss">scale</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span>
+<a href="#__codelineno-4-4" id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="w">    </span><span class="n">add_reference</span><span class="w"> </span><span class="ss">:products</span><span class="p">,</span><span class="w"> </span><span class="ss">:supplier</span><span class="p">,</span><span class="w"> </span><span class="ss">polymorphic</span><span class="p">:</span><span class="w"> </span><span class="kp">true</span>
+<a href="#__codelineno-4-5" id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="w">  </span><span class="k">end</span>
+<a href="#__codelineno-4-6" id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="k">end</span>
+</code></pre></div>
+</li>
+</ul>
+</div>
+<div class="admonition 概念">
+<p class="admonition-title">概念</p>
+<ul>
+<li>连接表：在 RDB 中对表进行关联并存储相关数据的技术，可以用于解决两个表的<strong>多对多</strong>关系（比如：博客中 文章 与 标签 之间的关系）</li>
+<li>连接表实则是构造一个中间表 R ，假设要为表 A 和 B 构造多对多大的映射关系，那么该表有三个字段：记录 id，表 A 的 id，表 B 的 id；每一条连接表的记录相当于一条边，构成两张表的二分图</li>
+<li>连接查询：如：查询 A 表 <code>id=?</code> 对应的所有 B 表元素： <code>select B.name from A join R on A.id=R.A_id join B on R.B_id=B.id where A.id=<mark class="critic">?</mark></code></li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">3.编写迁移文件</p>
+<ul>
+<li>创建表：可以通过 <code>create_table</code> 创建表，但是大部分时候都是通过 <code>model</code>, <code>resource</code>, <code>scaffold</code> 生成器来创建表<ul>
+<li><code>create_table</code> 的基本参数是 <code>:&lt;表名&gt;</code>，一个块（其中的迭代器包含以 数据类型命名的方法，每个这种方法都对应一个字段）</li>
+<li><code>create_table</code> 接收的其他参数有 <code>options: "字符串"</code>，<code>id: &lt;bool&gt;</code> 等</li>
+<li>参数块内的迭代器的参数：<code>:&lt;字段名&gt;</code>(基本参数)，<code>index:</code>，<code>:comment</code>（对某一列的注释？） 等</li>
+</ul>
+</li>
+<li>创建连接表：迁移方法 <code>create_join_table</code> 可以创建一个 <code>HABTM</code>(has and belong to many)连接表<ul>
+<li>基本参数：<code>:&lt;表As&gt;</code>，<code>:&lt;表Bs&gt;</code>；默认创建一个具有 <code>A_id</code> 和 <code>B_id</code> 列，名为 <code>A_Bs</code> 的表；这些属性默认 <code>null: false</code></li>
+<li>其他参数：<code>column_options: { null: &lt;bool&gt;, ... }</code>，<code>table_name: :&lt;表名&gt;</code></li>
+<li>特殊参数：允许接收一个块当作参数（类似于 <code>create_table</code> 中的块），但必须包含最基本的两个字段，即 <code>A_id</code> 和 <code>B_id</code></li>
+</ul>
+</li>
+<li>更改表：<code>change_table</code>，基本参数是 <code>:&lt;表名&gt;</code>，并且接收一个块，块迭代器包含的方法：<ul>
+<li><code>remove</code>：接收多个列表名参数，用于删除多个列字段</li>
+<li><code>rename</code>：有两个参数：<code>&lt;列原名&gt;</code>，<code>&lt;列的新名字&gt;</code></li>
+<li><code>&lt;数据类型名&gt;</code>：对应于 <code>create_table</code> 的块迭代器的方法</li>
+</ul>
+</li>
+<li>更改列：<code>change_column</code>，提供类似于 <code>add_column</code> 和 <code>remove_column</code> 的迁移方法<ul>
+<li><code>change_column_null</code></li>
+<li><code>change_column_default</code></li>
+</ul>
+</li>
+<li>列修饰符：创建 或 更改列时可以使用的修饰符：<ul>
+<li><code>comment</code>：提那家注释</li>
+<li><code>collation</code>：指定 string 或 text 列</li>
+<li><code>default</code>：允许在列上设置默认值（请注意，如果您 正在使用动态值（例如日期），则仅计算默认值 第一次（即应用迁移之日）。用 nil 为 NULL）</li>
+<li><code>limit</code>：设置 <code>string</code> 列的最大字符数 或 <code>text/binary/integer</code> 列的最大字节数</li>
+<li><code>null</code>：指定是否允许值为 null 的列</li>
+<li><code>precision</code>：指定 <code>decimal/numeric/datetime/time</code> 列的精度</li>
+<li><code>scale</code>：指定 <code>decimal/numeric</code> 列的小数点后的位数</li>
+<li>注：方法 <code>add_column</code> 或 <code>change_column</code> 没有用于索引的选项，而需要使用 <code>add_index</code>；null 和 default 不能通过命令行指定</li>
+</ul>
+</li>
+<li><code>add_reference</code> 或 <code>add_belongs_to</code>；<code>remove_reference</code><ul>
+<li>基本参数：<code>:表名</code>，<code>:&lt;reference&gt;</code></li>
+<li><a href="https://api.rubyonrails.org/v7.0.4.2/classes/ActiveRecord/ConnectionAdapters/SchemaStatements.html#method-i-add_reference">参考更多</a></li>
+</ul>
+</li>
+<li><code>add_foreign_key</code>：添加外键<ul>
+<li>基本参数：<code>:&lt;表A&gt;, :&lt;表B&gt;</code>，仅当 A 与 B 的关系是 多对一（默认会在 A 表中创建 B_id 字段）</li>
+<li>其他参数：<code>column: &lt;A表中的(外键)字段名&gt;</code>，<code>primary_key: &lt;B表的主键名&gt;</code></li>
+<li>特殊参数：<code>name</code>，<code>on_delete</code>，<code>if_not_exists</code>，<code>validate</code>，<code>deferrable</code></li>
+</ul>
+</li>
+<li><code>remove_foreign_key</code>：删除外键<ul>
+<li>如：<code>remove_foreign_key :&lt;表名&gt;, column: :&lt;外键列名&gt;</code></li>
+</ul>
+</li>
+<li>当帮手不够时？您可以使用 execute 执行任意 SQL 的方法<ul>
+<li><a href="https://api.rubyonrails.org/v7.0.4.2/classes/ActiveRecord/ConnectionAdapters/SchemaStatements.html">ActiveRecord::ConnectionAdapters::SchemaStatements</a>，<a href="https://api.rubyonrails.org/v7.0.4.2/classes/ActiveRecord/ConnectionAdapters/TableDefinition.html">ActiveRecord::ConnectionAdapters::TableDefinition</a>，<a href="https://api.rubyonrails.org/v7.0.4.2/classes/ActiveRecord/ConnectionAdapters/Table.html">ActiveRecord::ConnectionAdapters::Table</a></li>
+</ul>
+</li>
+<li><code>change</code> 方法：是定义在 <code>ActiveRecord::Migration[7.0]</code> 的方法，用于重写，其中提供的操作有：<ul>
+<li>add_column</li>
+<li>add_foreign_key</li>
+<li>add_index</li>
+<li>add_reference</li>
+<li>add_timestamps</li>
+<li>change_column_comment （必须提供 :from 和 :to 选项）</li>
+<li>change_column_default （必须提供 :from 和 :to 选项）</li>
+<li>change_column_null</li>
+<li>change_table_comment （必须提供 :from 和 :to 选项）</li>
+<li>create_join_table</li>
+<li>create_table</li>
+<li>disable_extension</li>
+<li>drop_join_table</li>
+<li>drop_table （必须提供块）</li>
+<li>enable_extension</li>
+<li>remove_column （必须提供类型）</li>
+<li>remove_foreign_key （必须提供第二张桌子）</li>
+<li>remove_index</li>
+<li>remove_reference</li>
+<li>remove_timestamps</li>
+<li>rename_column</li>
+<li>rename_index</li>
+<li>rename_table</li>
+<li><a href="https://api.rubyonrails.org/v7.0.4.2/classes/ActiveRecord/ConnectionAdapters/SchemaStatements.html">参考</a></li>
+<li>注：<ul>
+<li>change_table 是可逆的（即可完全回滚），仅当块不调用 change， change_default 或 remove</li>
+<li>remove_column 是可逆的，仅当在第三个参数中提供列类型 <code>:&lt;type&gt;</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>reversible</code>：如果复杂的迁移使得 <code>Active Record</code> 不知道如何回滚，那么可以在重写的 <code>change</code> 内使用 <code>reversible</code> 来指定 运行迁移时 以及 回滚时（还原时）执行的其他操作<ul>
+<li><code>reversible</code> 参数为一个块，块迭代器有两个方法 <code>up</code> 和 <code>down</code>，分别对应 运行迁移时 和 回滚时 运行的操作</li>
+<li>块内可以执行 <code>execute</code> 对数据库进行操作</li>
+<li>（可能会用到 ruby 的 <code>Here document</code> 语法，即 <code>&lt;&lt;-SQL &lt;sql语句&gt; SQL</code>）</li>
+<li>思考：迁移可能做一些完全不可逆转的事情，导致数据破坏，从而使得迁移不可逆；<code>ActiveRecord::IrreversibleMigration</code> 的作用是什么？</li>
+</ul>
+</li>
+<li><code>up</code>，<code>down</code> 方法：前者用于告知 运行迁移时 的操作，而后者告知 回滚时 的操作；和 <code>change</code> 一样，都可以用来重写</li>
+<li>还原以前的迁移：<code>revert</code>，例如：<ul>
+<li>导入要回滚的迁移文件：<code>require_relative "20121212123456_example_migration"</code></li>
+<li>比如在 <code>change</code> 内部调用 <code>revert ExampleMigration</code></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">4.运行迁移</p>
+<ul>
+<li><code>ruby bin/rails db:migrate</code> 会运行之前尚未运行过的所有迁移，并且运行这些迁移的 <code>change</code> 和 <code>up</code> 方法；除此之外该命令会吊桶 <code>db:schema:dump</code> 命令，以更新 <code>db/schema.rb</code> 文件（该文件匹配数据库的结构）</li>
+<li><code>ruby bin/rails db:migrate VERSION=&lt;时间戳&gt;</code>：该命令会运行指定版本及其之间版本的迁移（默认“向上迁移”，即只执行 <code>change</code> 和 <code>up</code>）</li>
+<li>回滚：<code>ruby bin/rails db:rollback</code><ul>
+<li>参数 <code>STEP=&lt;num&gt;</code>：回滚最后 <code>num</code> 次操作</li>
+</ul>
+</li>
+<li><code>db:migrate:redo [STEP=&lt;num&gt;]</code></li>
+<li><code>bin/rails db:setup</code>：创建数据库</li>
+<li><code>bin/rails db:drop</code>：删除数据库</li>
+<li><code>bin/rails db:reset</code>：删除数据库并重置，即 <code>drop</code> 和 <code>setup</code> 的结合</li>
+<li><code>bin/rails db:migrate:up [VERSION=&lt;时间戳&gt;]</code>：<code>up</code> 可改为 <code>down</code> 或 <code>change</code></li>
+<li>在不同环境中运行迁移：<code>db:migrate</code> 提供参数 <code>RAILS_ENV=&lt;env&gt;</code>，<code>env</code> 默认是 <code>environment</code><ul>
+<li>注：有三种运行环境：<code>development</code>，<code>test</code>，<code>production</code></li>
+</ul>
+</li>
+<li>更改执行迁移时的输出：直接在迁移文件中调用这些方法即可：<ul>
+<li><a href="https://api.rubyonrails.org/v7.0.4.2/classes/ActiveRecord/Migration.html#method-i-suppress_messages"><code>suppress_messages</code></a>：将块作为参数，并禁止显示块生成的任何输出</li>
+<li><a href="https://api.rubyonrails.org/v7.0.4.2/classes/ActiveRecord/Migration.html#method-i-say"><code>say</code></a>：获取消息参数并按原样输出。可以传递第二个布尔参数来指定是否缩进</li>
+<li><a href="https://api.rubyonrails.org/v7.0.4.2/classes/ActiveRecord/Migration.html#method-i-say_with_time"><code>say_with_time</code></a>：输出文本以及运行其块所花费的时间。如果块返回一个整数，则假定它是受影响的行数</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">5.更改现有迁移</p>
+<ul>
+<li>假设运行了错误的迁移文件或想反悔，那么不能仅仅编辑迁移文件再运行 <code>bin/rails db:migrate</code></li>
+<li>而必须运行回滚命令 <code>bin/rails db:rollback</code>，如何再编辑迁移文件，最后运行 <code>bin/rails db:migrate</code></li>
+<li>另外，如果要撤销之前部分或全部的迁移，创建新的迁移从而调用 <code>revert</code> 方法可能有用</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">6. schema dumping</p>
+<ul>
+<li>rails 生成的 <code>db/schema.rb</code> 尝试捕获当前状态的数据库架构</li>
+<li><a href="https://guides.rubyonrails.org/active_record_migrations.html#schema-dumping-and-you">详见此链接</a></li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">7. 活动记录和引用完整性</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">8. 迁移和种子数据</p>
+<ul>
+<li><code>db/seeds.rb</code> 内的代码会在执行 <code>db:seeds</code> 后执行，通常是用于构造数据库中的原始数据</li>
+</ul>
+</div>
+<div class="admonition 旧迁移">
+<p class="admonition-title">旧迁移</p>
+<ul>
+<li><code>db/schema.rb</code> 或 <code>db/structure.sql</code> 是当前状态的快照数据库</li>
+<li><code>bin/rails db:migrate:status</code> 可以查看数据库中的表 <code>schema_migrations</code>（该表记录迁移文件的时间戳）</li>
+</ul>
+</div>
+<h4 id="validations">Validations</h4>
+<div class="admonition note">
+<p class="admonition-title">1. 概述</p>
+<ul>
+<li>验证用于提供一种机制，以保证数据保存到数据库之间满足合法性</li>
+<li>除了 rails 提供的 模型级验证 以外，还有其他三种验证方法：客户端验证，控制器级验证，数据库约束</li>
+<li>验证的执行顺序：<ul>
+<li><code>client-side validations</code> <span class="arithmatex">\(\to\)</span> <code>controller-level validations</code> <span class="arithmatex">\(\to\)</span> <code>Model-level validations</code> <span class="arithmatex">\(\to\)</span> <code>native database constraints</code></li>
+</ul>
+</li>
+<li>验证的触发条件：<code>ApplicationRecord</code> 实例方法：<ul>
+<li><code>create</code>，<code>create!</code></li>
+<li><code>save</code>，<code>save!</code></li>
+<li><code>update</code>，<code>update!</code></li>
+<li>注：<code>bang</code> 版本的方法（有叹号 <code>!</code> 的方法）指的是执行失败则报错</li>
+<li>另外，<code>new_record?</code> 方法用于检查当前对象是否还未插入到数据库中，若返回 <code>false</code>，这意味着不能通过 <code>save</code> 将对象重复插入到数据库中</li>
+</ul>
+</li>
+<li>跳过验证：<code>ApplicationRecord</code> 实例方法：<ul>
+<li>decrement!</li>
+<li>decrement_counter</li>
+<li>increment!</li>
+<li>increment_counter</li>
+<li>insert，insert!</li>
+<li>insert_all，insert_all!</li>
+<li>toggle!</li>
+<li>touch，touch_all</li>
+<li>update_all</li>
+<li>update_attribute</li>
+<li>update_column</li>
+<li>update_columns</li>
+<li>update_counters</li>
+<li>upsert</li>
+<li>upsert_all</li>
+<li>save(validate: false)</li>
+</ul>
+</li>
+<li>验证前判定是否合法<ul>
+<li><code>valid?</code>，<code>invalid?</code></li>
+</ul>
+</li>
+<li><code>errors[]</code>：<ul>
+<li>可以通过 <code>errors[:&lt;attribute&gt;]</code> 得到特定参数的验证错误消息<strong>数组</strong></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">2. 验证帮助程序</p>
+<ol>
+<li>Active Record 提供了预定义的验证帮助程序，它们都接共有 <code>validate</code> 方法的两个选项：<code>:on</code>，<code>:message</code><ul>
+<li><code>:on</code> 的取值：<code>:create | :update</code></li>
+</ul>
+</li>
+<li><code>acceptance</code>：它是 <code>validate</code> 方法的参数<ul>
+<li>这通常用于“用户需要同意应用程序的服务条款”，“确认已阅读某些文本” 或 任何类似的内容</li>
+<li>参数 <code>accept: &lt;列表&gt;</code>：用于验证 <code>model</code> 对象的指定属性的值是否等于给定的列表的某个值；<code>&lt;列表&gt;</code>默认为 <code>['1', true]</code></li>
+<li><code>:message</code> 参数的默认值：<code>"must be accepted"</code></li>
+</ul>
+</li>
+<li><code>validates_associated</code> 方法：<ul>
+<li>加入当前 model 与其他 model 相关联，应使用该方法对它们进行关联</li>
+<li>用法：<code>validates_associated  :&lt;表名&gt;</code></li>
+<li>注：不能在关联表的两边都添加 <code>validates_associated</code> 方法，否则它们会互相调用以至于无线循环</li>
+<li><code>:message</code> 的默认值：<code>"is invalid"</code></li>
+</ul>
+</li>
+<li><code>confirmation</code>：当需要有两个应接受的文本字段时，应该使用该帮助程序确保两个文本相同<ul>
+<li>通常用于<strong>两次验证</strong> 邮箱地址 或 密码：<code>confirmation</code> 验证器会验证一个字段（如密码）是否和另一个字段（如密码确认）相同。如果两个字段相同，则验证通过；否则，则会添加一个错误，提示两个字段需要匹配</li>
+<li>用法：<code>confirmation: &lt;bool&gt;</code><ul>
+<li>如：<code>validates :password, confirmation: true</code> 表示字段 <code>password</code> 会与 <code>password_confirmation</code> 进行比较，如果不相同则返回一个错误</li>
+</ul>
+</li>
+<li>参数 <code>case_sensitive: &lt;bool&gt;</code>：指定是否大小写敏感</li>
+<li><code>:message</code> 的默认值：<code>"doesn't match confirmation"</code></li>
+</ul>
+</li>
+<li><code>comparison</code>：比较两个值，包含多个选项，每个选项都接受 值，过程 或 符号<ul>
+<li><code>less_than</code>，<code>greater_than</code>，<code>equal_to</code></li>
+<li><code>less_than_or_equal_to</code>，<code>greater_than_or_equal_to</code></li>
+<li><code>other_than</code></li>
+</ul>
+</li>
+<li><code>exclusion</code>：验证属性的值是否未包含在给定的设置</li>
+<li><code>format</code>：测试属性的值是否与给定的<strong>正则表达式</strong>匹配，<code>:with</code></li>
+<li><code>inclusion</code>：验证属性的值是否包含在给定的集合中，<code>:in</code></li>
+<li><code>length</code>：验证属性值的长度，<code>:minimum</code>，<code>:maximum</code>，<code>:in</code>，<code>:is</code>，<code>:too_short</code>，<code>too_long</code></li>
+<li><code>numericality</code>：验证属性是否只有数值，<code>:only_integer</code>，<code>:greater_than</code>，...</li>
+<li><code>presence</code>：验证属性是否不为空</li>
+<li><code>absence</code>：是否不存在</li>
+<li><code>uniqueness</code>：是否唯一</li>
+<li><code>validates_with</code> 方法：将记录传递给单独的类进行验证，如：重写了 <code>validate</code> 的 <code>ActiveModel::Validator</code> 子类</li>
+<li><code>validates_each</code> 方法：根据块验证属性，块接收 记录，属性名，属性值；可以做任意喜欢的事情来检查块中的有效数据</li>
+</ol>
+</div>
+<div class="admonition note">
+<p class="admonition-title">3. 常见验证选项</p>
+<ol>
+<li><code>:allow_nil</code>：当属性为 <code>nil</code> 时，跳过验证</li>
+<li><code>:allow_blank</code>：属性值为空（即：<code>nil</code>，空字符串等）跳过验证</li>
+<li><code>:message</code>：验证失败时的消息</li>
+<li><code>:on</code>：指定何时（生命周期）进行验证</li>
+</ol>
+</div>
+<div class="admonition note">
+<p class="admonition-title">4. 严格验证</p>
+<ul>
+<li>指定验证是严格的，并在对象非法时引发 <code>ActiveModel::StrictValidationFailed</code></li>
+<li>用法：提供验证选项 <code>strict: &lt;bool&gt;</code> 或 <code>strict: &lt;自定义异常&gt;</code></li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">5. 条件验证</p>
+<ol>
+<li>这种方法提供一种<strong>谓词</strong>的方式，在验证之前调用给定的方法进行过滤</li>
+<li><code>:if :&lt;?方法&gt;</code> 或 <code>:unless :&lt;?方法&gt;</code>：仅当方法返回 true 或 false 时执行验证；该方法可以是 普通方法的tag，<code>Proc.new { |a| ... }</code>，lambda 表达式（<code>-&gt; { ... }</code>）</li>
+<li>分组条件验证：<code>with_options</code> 方法，让多个验证使用一个条件</li>
+<li>组合验证条件：<code>:if</code> 或 <code>:unless</code> 可以用以 <code>[]</code> 的形式将多个条件放在一起（相当于用 <code>&amp;&amp;</code> 连接多个条件）</li>
+</ol>
+</div>
+<div class="admonition note">
+<p class="admonition-title">6. 自定义验证</p>
+<ol>
+<li>自定义验证器：继承 <code>ActiveModel::Validator</code> 类，并实现 <code>validate(record)</code> 方法（代码位于 <code>app/models/xxx/rb</code>）；<code>record.erros.add</code> 方法对应“验证失败”的逻辑；通常和 <code>validates_with</code> 方法一起使用<ul>
+<li>实现 <code>ActiveModel::EachValidator</code> 的 <code>validate_each(record, attribute, value)</code>；每次验证器触发时都调用</li>
+</ul>
+</li>
+<li>自定义方法：</li>
+</ol>
+</div>
+<div class="admonition note">
+<p class="admonition-title">7. 验证错误</p>
+<ol>
+<li><code>valid?</code> 和 <code>invalid?</code> 方法用于检查有效性；而 <a href="https://api.rubyonrails.org/v7.0.4.2/classes/ActiveModel/Errors.html"><code>errors</code></a> 收集错误的信息</li>
+<li><code>errors</code>：该方法返回的类 <code>ActiveModel::Errors</code> 的实例，包含错误信息；<code>full_messages</code> 返回错误信息的列表</li>
+<li><code>errors[]</code>：返回指定属性的所有错误信息；这是一个 <code>:tag -&gt; string[]</code> 的映射（tag 到 字符串数组的映射）</li>
+<li><code>errors.where(...)</code>：返回指定的多个属性的错误信息（列表？）；列表中的对象有 <code>attribute</code>，<code>type</code>，<code>options</code>，<code>message</code>，<code>full_message</code> 等属性</li>
+<li><code>errors.add</code>：通常在后端的 <code>validate</code> 方法的参数块例调用；以添加错误</li>
+<li><code>errors[:base]</code>：<code>:base</code> 对应于与 对象整体状态 有关的错误，而不是与特定的属性相关的错误</li>
+<li><code>errors.clear</code>：清除 errors 容器</li>
+<li><code>errors.size</code>：返回错误总数</li>
+</ol>
+</div>
+<div class="admonition note">
+<p class="admonition-title">8. 在视图中显示验证错误</p>
+<p><a href="https://guides.rubyonrails.org/active_record_validations.html#displaying-validation-errors-in-views">参见</a></p>
+</div>
+<h4 id="callbacks">Callbacks</h4>
+<div class="admonition note">
+<p class="admonition-title">1. 对象生命周期</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">2. 回调</p>
+</div>
+<p>回调可以提供在 创建、保存、更新、删除、验证或从数据库加载 Active Record 对象时运行的代码</p>
+<p>注册回调</p>
+<div class="admonition note">
+<p class="admonition-title">3. 可用的回调</p>
+<ol>
+<li>以下将各种操作后对应的回调方法以时间顺序列出：</li>
+<li>create：<ul>
+<li>before_validation</li>
+<li>after_validation</li>
+<li>before_save</li>
+<li>around_save</li>
+<li><strong>before_create</strong></li>
+<li><strong>around_create</strong></li>
+<li><strong>after_create</strong></li>
+<li>after_save</li>
+<li>after_commit / after_rollback</li>
+</ul>
+</li>
+<li>update:<ul>
+<li>before_validation</li>
+<li>after_validation</li>
+<li>before_save</li>
+<li>around_save</li>
+<li><strong>before_update</strong></li>
+<li><strong>around_update</strong></li>
+<li><strong>after_update</strong></li>
+<li>after_save</li>
+<li>after_commit / after_rollback</li>
+<li>注意：<code>create</code> 和 <code>update</code> 的共同点：都有 <code>validation</code>，<code>save</code>和事务</li>
+</ul>
+</li>
+<li>destroy:<ul>
+<li><strong>before_destroy</strong></li>
+<li><strong>around_destroy</strong></li>
+<li><strong>after_destroy</strong></li>
+<li>after_commit / after_rollback</li>
+</ul>
+</li>
+<li><code>after_initialize</code>：实例化 <code>Active Record</code> 对象，直接使用 <code>new</code>，或 从数据库加载记录时调用</li>
+<li><code>after_find</code>：每当 <code>Active Record</code> 从数据库加载记录时都会回调（<code>after_find</code> 在 <code>after_initialize</code> 之前调用）</li>
+<li><code>after_touch</code>：每当 <code>Active Record</code> 对象被 “touch” 时都会调用；注：<code>belongs_to</code> 方法也提供了参数 <code>:touch</code></li>
+</ol>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<ul>
+<li>应该避免在回调中更新或保存属性（如：<code>self.&lt;attribute&gt; = &lt;value&gt;</code>）；但是可以在 <code>before_create</code> 和 <code>before_update</code> 或更早之前保存属性</li>
+<li><code>before_destroy</code> 回调应该放在 <code>dependent: :destroy</code> 关联之前（或者使用 <code>prepend: true</code> 选项），以确保它们在记录被<code>dependent: :destroy</code> 删除之前执行</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">4. 回调的细节内容</p>
+<ul>
+<li>触发回调的方法：<ul>
+<li>create，create!</li>
+<li>destroy，destroy!</li>
+<li>destroy_all，destroy_by</li>
+<li>save，save!，save(validate: false)</li>
+<li>toggle!</li>
+<li>touch</li>
+<li>update_attribute</li>
+<li>update</li>
+<li>update!</li>
+<li>valid?</li>
+<li>触发 <code>after_find</code>：<ul>
+<li>all</li>
+<li>first</li>
+<li>find</li>
+<li>find_by</li>
+<li>find_by_<em>，find_by_</em>!</li>
+<li>find_by_sql</li>
+<li>last</li>
+</ul>
+</li>
+<li>每次初始化类对象时都会触发：<code>after_initialize</code></li>
+</ul>
+</li>
+<li>跳过回调的方法：<ul>
+<li>和验证一样，这些方法可以跳过回调：</li>
+<li>decrement!，decrement_counter</li>
+<li>delete，delete_all，delete_by</li>
+<li>increment!，increment_counter，insert</li>
+<li>insert!，insert_all，insert_all!</li>
+<li>touch_all</li>
+<li>update_column，update_columns</li>
+<li>update_all，update_counters</li>
+<li>upsert，upsert_all</li>
+</ul>
+</li>
+<li>停止回调：<code>throw :abort</code></li>
+<li>关联回调：</li>
+<li>条件回调：<code>:if</code> 和 <code>:unless</code></li>
+<li>回调类：</li>
+<li>事务回调：<code>after_commit</code>，<code>after_rollback</code>；<a href="https://guides.rubyonrails.org/active_record_callbacks.html">详见此链接</a></li>
+</ul>
+</div>
+<h4 id="associations">Associations</h4>
+<div class="admonition note">
+<p class="admonition-title">1. 什么是关联</p>
+<ul>
+<li>假设 <code>authors</code> 和 <code>books</code> 两张表之间是 一对多 关系<ul>
+<li>若要添加一个 <code>book</code>，传统方式需要操作 <code>books</code> 表；添加关联后，可以对一个 <code>author</code> 调用逻辑上的 <code>books</code> 集合，直接对该集合添加 <code>book</code> 即可</li>
+<li>若要删除一个 <code>author</code>，传统方式是删除与该 <code>author</code> 关联的 <code>book</code> 记录，然后删除 <code>author</code>；添加关联后，可以直接删除 <code>author</code>（rails 会自动删除与 <code>author</code> 关联的 <code>book</code> 记录）</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">2. 关联的类型</p>
+<ul>
+<li><code>belongs_to</code>：表示该 <code>model</code> 的某个实例属于另一个 <code>model</code> 的某个实例；另一个<code>model</code>应该用 <code>has_one</code> 或 <code>has_many</code> 反向关联；注：<code>belongs_to</code> 不能保证引用一致性，因此需要参数 <code>foreign_key: true</code>；有必要时加上 <code>index: { unique: true }</code></li>
+<li><code>has_one</code>：表示该 <code>model</code> 被另一个 <code>model</code> 所引用；如：每个供应商只有一个账户（前者使用 <code>has_one</code>，后者使用 <code>belongs_to</code>）</li>
+<li><code>has_many</code>：表示该 <code>model</code> 的某个实例具有另一个 <code>model</code> 的多个实例；如：作者和书籍的关系（前者用<code>has_many</code>，后者用<code>belongs_to</code>；这里假定书没有多作者）；必要时，加上 <code>index: true</code></li>
+<li><code>has_many :through</code>：可以通过中间表实现 多对多 或 一对多关联，用法：“一表”使用 <code>has_many :&lt;多表&gt; through: :&lt;中间表&gt;</code>，中间表使用 <code>belongs_to :&lt;表名&gt;</code> 或 <code>has_many :&lt;表名&gt;</code>；如：<code>医生，预约表，病人</code>，<code>书，章，节</code></li>
+<li><code>has_one :through</code>：表示该 <code>model</code> 的某个实例通过中间表关联到另一个 <code>model</code> 的某个实例；如：<code>人，账号，账号记录</code></li>
+<li><code>has_and_belongs_to_many</code>：直接与另一个表进行多对多关联</li>
+<li><code>belongs_to</code> 和 <code>has_one</code> 之间的选择：这两者容易混淆，但是前者是某种引用，而后者是告知这种引用的存在</li>
+<li><code>has_many :through</code> 和 <code>has_and_belongs_to_many</code> 之间的选择：两者都可以实现 多对多关系；假如我们需要对中间表添加额外属性 或 需要验证中间表 或 回调，我们应使用前者，否则后者会比较方便</li>
+<li>多态关联：表示该 <code>model</code> 的某个实例属于<strong>多个</strong> <code>model</code> 的某个实例，用法：<code>belongs_to :&lt;多态名？&gt;, polymorphic: true</code>，被引用的表使用 <code>has_many :&lt;该model名&gt;, as: :&lt;多态名&gt;</code>，...；如：多种类型的账号共有多个图片？</li>
+<li><code>self join</code>：</li>
+</ul>
+</div>
+<p>注：仅有 <code>belongs_to</code> 会在迁移文件中出现，其指定引用关系；每加一条引用边，都会添加不小于两条迁移代码</p>
+<div class="admonition note">
+<p class="admonition-title">3. <code>tips</code>, <code>tricks</code>, <code>warnings</code></p>
+<ul>
+<li>控制缓存</li>
+<li>避免命名冲突</li>
+<li>更新架构</li>
+<li>控制关联范围</li>
+<li>双向关联</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">4. 详细的关联参考</p>
+<ul>
+<li><code>belongs_to</code></li>
+<li><code>has_one</code></li>
+<li><code>has_many</code></li>
+<li><code>has_and_belongs_to_many</code></li>
+<li>关联回调</li>
+<li>关联扩展</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">5. 单表集成(<code>STI</code>)</p>
+</div>
+<h4 id="query-interface">Query Interface</h4>
+<ol>
+<li>Active Record 查询接口</li>
+<li>从数据库中检索对象</li>
+<li><code>conditions</code></li>
+<li><code>ordering</code></li>
+<li>选择特定字段</li>
+<li>限制和偏移</li>
+<li>群</li>
+<li>拥有</li>
+<li>覆盖条件</li>
+<li>空关系</li>
+<li>只读对象</li>
+<li>锁定记录以进行更新</li>
+<li>连接表</li>
+<li>预先加载关联</li>
+<li>范围</li>
+<li>动态查找器</li>
+<li>枚举</li>
+<li>了解方法链接</li>
+<li>查找后构件新对象</li>
+<li>通过 SQL 查找</li>
+<li>对象的存在</li>
+<li>计算</li>
+<li>运行解释</li>
+</ol>
+<h4 id="active-model-basics">Active Model Basics</h4>
+<h3 id="2views">2.Views</h3>
+<h3 id="3controllers">3.Controllers</h3>
+<h3 id="4other-components">4.Other Components</h3>
+<h3 id="5digging-deeper">5.Digging Deeper</h3>
+<h3 id="6extending-rails">6.Extending Rails</h3>
+</article>
+</div>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"></path></svg>
+            回到页面顶部
+          </button>
+</main>
+<footer class="md-footer">
+<nav aria-label="页脚" class="md-footer__inner md-grid">
+<a aria-label="上一页: Ruby gtk3" class="md-footer__link md-footer__link--prev" href="../ruby-gtk3/" rel="prev">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</div>
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                上一页
+              </span>
+<div class="md-ellipsis">
+                Ruby gtk3
+              </div>
+</div>
+</a>
+<a aria-label="下一页: Js vue" class="md-footer__link md-footer__link--next" href="../js-vue/" rel="next">
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                下一页
+              </span>
+<div class="md-ellipsis">
+                Js vue
+              </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg>
+</div>
+</a>
+</nav>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+<div class="md-copyright__highlight">
+      Copyright © 2022 - 2023 travis
+    </div>
+</div>
+<div class="md-social">
+<a class="md-social__link" href="链接url地址" rel="noopener" target="_blank" title="标识名">
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg>
+</a>
+<a class="md-social__link" href="链接url地址" rel="noopener" target="_blank" title="标识名">
+<svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M349.9 236.3h-66.1v-59.4h66.1v59.4zm0-204.3h-66.1v60.7h66.1V32zm78.2 144.8H362v59.4h66.1v-59.4zm-156.3-72.1h-66.1v60.1h66.1v-60.1zm78.1 0h-66.1v60.1h66.1v-60.1zm276.8 100c-14.4-9.7-47.6-13.2-73.1-8.4-3.3-24-16.7-44.9-41.1-63.7l-14-9.3-9.3 14c-18.4 27.8-23.4 73.6-3.7 103.8-8.7 4.7-25.8 11.1-48.4 10.7H2.4c-8.7 50.8 5.8 116.8 44 162.1 37.1 43.9 92.7 66.2 165.4 66.2 157.4 0 273.9-72.5 328.4-204.2 21.4.4 67.6.1 91.3-45.2 1.5-2.5 6.6-13.2 8.5-17.1l-13.3-8.9zm-511.1-27.9h-66v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1v-59.4zm-78.1-72.1h-66.1v60.1h66.1v-60.1z"></path></svg>
+</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "search.suggest", "search.highlight", "search.share", "header.autohide", "navigation.footer", "content.action.edit", "content.action.view", "content.code.copy", "content.code.annotate", "content.tooltips"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+<script src="../../assets/javascripts/bundle.51198bba.min.js"></script>
+<script src="../../res/extra.js"></script>
+<script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
+</html>
