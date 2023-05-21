@@ -5,6 +5,21 @@ nav:
         - main/graduate.md
         - main/to be excellent.md
         - main/ideas.md
+        - main/职业分析.md
+    - dosome:
+        - dosome/index.md
+        - dosome/ruby-gosu.md
+        - dosome/ruby-gtk3.md
+        - dosome/ruby on rails.md
+        - dosome/js-vue.md
+        - dosome/ruby-nokogiri.md
+        - dosome/cpp-qt.md
+        - dosome/python.md
+        - dosome/cpp-frame.md
+        - dosome/cpp-juce.md
+        - dosome/cpp-easyX.md
+    - chat:
+        - chat/index.md
 extra_css:
     - res/extra.css
 extra_javascript:
